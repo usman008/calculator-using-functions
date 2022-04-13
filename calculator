@@ -1,20 +1,13 @@
 import 'dart:io';
 
 main() {
-  double a = input();
-  double b = input();
-
-  display(
-      add: add(a: a, b: b),
-      subtract: subtract(a: a, b: b),
-      multiply: multiply(a: a, b: b),
-      divide: divide(a: a, b: b));
+  display();
 }
 
 double input() {
   stdout.write('Enter number: ');
-  double input = double.parse(stdin.readLineSync()!);
-  return input;
+
+  return double.parse(stdin.readLineSync()!);
 }
 
 double add({required double a, required double b}) {
@@ -33,10 +26,11 @@ double divide({required double a, required double b}) {
   return a / b;
 }
 
-void display(
-    {required add, required subtract, required multiply, required divide}) {
-  print(add);
-  print(subtract);
-  print(multiply);
-  print(divide);
+void display() {
+  double a = input();
+  double b = input();
+  print('Add: ${add(a: a, b: b)}');
+  print('Subtract: ${subtract(a: a, b: b)}');
+  print('Multiply: ${multiply(a: a, b: b)}');
+  print('Divide: ${divide(a: a, b: b)}');
 }
